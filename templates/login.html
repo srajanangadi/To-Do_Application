@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock title %}
+{% block body %}
+
+    <style>
+        .login-form{
+            display: flex;
+            /* flex-direction: column; */
+            justify-content:center;
+            align-items: center;
+            
+            border: .1rem solid rgb(235, 250, 255);
+            box-shadow: .2rem .2rem .2rem rgb(60, 83, 97);
+            width: 40%;
+            padding: 1rem;
+            margin: auto;
+            margin-top: 5rem;
+            border-radius: .4rem;
+            background-color: rgba(0, 183, 255, 0.05);
+        }
+        .login-form form{
+            width:80%;
+        }
+    </style>
+    <div class="container">
+    <div class="login-form">
+        <form>
+            <h3 style="text-align:center; margin:1.5rem;"><strong>Task</strong>Manager</h3>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" style="width:40%; ">Login</button>
+            </div>
+        </form>
+    </div>
+    </div>
+
+        {% endblock body %}
+        {% block footer %}
+            <div class="card text-bg-info mb-3" style=
+            "background-color:rgb(147, 241, 255) !important;
+            border-radius:0% !important;"
+            >
+                <div class="card-header" style="text-align:center;">About the Developer</div>
+                <div class="card-body">
+                    <div style="display:flex; justify-content:space-between;">
+                    <h5 style="font-family:Verdana, Geneva, Tahoma, sans-serif; font-size:medium; margin-top:auto; margin-bottom:auto;">Developer: Srajankumar Angadi</h5>
+                    <div style="display:flex; justify-content:space-between;"></div>
+                    <ul>
+                        <i class="fa-brands fa-github fa-sm me-2"></i>Github</br>
+                        <i class="fa-brands fa-linkedin fa-sm me-2"></i>LinkedIn
+                    </ul>
+                </div>
+                </div>
+            </div>
+        {% endblock footer %}
