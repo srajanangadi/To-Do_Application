@@ -1,0 +1,6 @@
+__pycache__
+flaskenv/
+.env
+.flaskenv
+__pycache__/
+setup.txt

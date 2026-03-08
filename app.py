@@ -3,6 +3,7 @@ from models import Todo, Users
 from database import db
 from flask_smorest import Api
 from routes.todo import todos_blp
+from routes.user import user_blp
 
 app=Flask(__name__)
 app.config["API_TITLE"] = "My Store API"
@@ -24,6 +25,7 @@ def home():
 api = Api(app)
 
 api.register_blueprint(todos_blp)
+api.register_blueprint(user_blp)
 
 with app.app_context():
     db.create_all()
