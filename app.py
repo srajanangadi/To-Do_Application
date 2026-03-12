@@ -26,8 +26,22 @@ def home():
 def login():
     return render_template("login.html")
 
-@app.route("/update")
+@app.route("/update/<int:sno>", methods=["POST","GET"])
 def update():
+    if request.form.get('_method') == "PUT":
+        title = (request.form['title'])
+        description = (request.form['description'])
+        todo = Todo.query.filter_by(sno=sno).first()
+        todo.title = title
+        todo.description = description
+        db.session.add(todo)
+        db.session.commit()
+        return redirect(url_for("hello_world"))
+
+    todo = Todo.query.filter_by(sno=sno).first()
+    return render_template('update.html', todo=todo)
+
+
     return render_template("update.html")
 
 api = Api(app)
